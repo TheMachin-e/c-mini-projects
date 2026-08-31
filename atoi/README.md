@@ -5,7 +5,7 @@ My implementation of atoi() in C.
 ## Handles
 
 - Leading whitespace
-- + and - signs
+- \+ and - signs
 - Decimal digits
 - Stops at first non-digit
 - Empty/malformed input

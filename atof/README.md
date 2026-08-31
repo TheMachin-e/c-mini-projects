@@ -5,7 +5,7 @@ My implementation of atof() in C.
 ## Handles
 
 - Leading whitespace
-- + and - signs
+- \+ and - signs
 - Integer part
 - Fractional part
 - Scientific notation
