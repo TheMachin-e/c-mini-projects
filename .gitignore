@@ -1,0 +1,10 @@
+# Compiled executables
+a.out
+*.out
+*.exe
+
+# Object files
+*.o
+
+# Debugging files
+*.dSYM/
