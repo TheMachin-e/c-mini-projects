@@ -2,9 +2,15 @@
 a.out
 *.out
 *.exe
+student
+build/
 
 # Object files
 *.o
 
 # Debugging files
 *.dSYM/
+
+#swapfils
+*.swp
+
