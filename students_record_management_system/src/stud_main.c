@@ -1,14 +1,13 @@
 #include<stdio.h>
 #include "student.h"
-
 int main(){
 	student *head = NULL;
 	char op, sub_op, name[50];
 	int rollno;
 	float percentage;
-	recover_record(&head);
+	//recover_record(&head);
 	while(1){
-		printf("************************** STUDENT RECORD MENU *************************\n\n\n");
+		printf("\n\n\n************************** STUDENT RECORD MENU *************************\n\n");
 		printf("a/A : Add new record\n");
 		printf("d/D : Delete a record\n");
 		printf("v/V : Show the list\n");
@@ -22,6 +21,7 @@ int main(){
 		op |= 32;
 		switch(op){
 			case 'a': add_new(&head); break;
+			/*
 			case 'd':
 				printf("r/R : Roll number based deletion\n");
 				printf("n/N : Name base deletion\n"); 
@@ -41,7 +41,9 @@ int main(){
 					default: printf("Invalid input\n");
 				}
 				break;
+			*/
 			case 'v': show_all_records(head); break;
+			/*
 			case 'm': 
 				printf("r/R : Search record to modify using roll number\n");
 				printf("n/N : Search record to modify using name\n");
@@ -72,7 +74,9 @@ int main(){
 			case 's': save_record(head); break;
 			case 't': sort_record(&head); break;
 			case 'r': reverse_record(&head); break;
+			*/
 			case 'l': delete_all(&head); break;
+			/*
 			case 'e': 
 				printf("s/S : Save and exit\n");
 				printf("e/E : Exit without saving\n");
@@ -87,6 +91,7 @@ int main(){
 				else
 					printf("Invalid input\n");
 				break;
+			*/
 			default: printf("Inalid input\n");
 				 
 		}
