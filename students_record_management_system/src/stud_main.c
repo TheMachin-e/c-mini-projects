@@ -21,7 +21,6 @@ int main(){
 		op |= 32;
 		switch(op){
 			case 'a': add_new(&head); break;
-			/*
 			case 'd':
 				printf("r/R : Roll number based deletion\n");
 				printf("n/N : Name base deletion\n"); 
@@ -35,15 +34,13 @@ int main(){
 						break;	
 					case 'n':
 						printf("Enter name: ");
-						scanf("%s49",name);
+						scanf(" %[^\n]49",name);
 						delete_record_name(&head, name);
 						break;
 					default: printf("Invalid input\n");
 				}
 				break;
-			*/
 			case 'v': show_all_records(head); break;
-			/*
 			case 'm': 
 				printf("r/R : Search record to modify using roll number\n");
 				printf("n/N : Search record to modify using name\n");
@@ -74,9 +71,7 @@ int main(){
 			case 's': save_record(head); break;
 			case 't': sort_record(&head); break;
 			case 'r': reverse_record(&head); break;
-			*/
 			case 'l': delete_all(&head); break;
-			/*
 			case 'e': 
 				printf("s/S : Save and exit\n");
 				printf("e/E : Exit without saving\n");
@@ -91,7 +86,6 @@ int main(){
 				else
 					printf("Invalid input\n");
 				break;
-			*/
 			default: printf("Inalid input\n");
 				 
 		}
