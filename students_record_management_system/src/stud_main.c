@@ -5,9 +5,9 @@ int main(){
 	char op, sub_op, name[50];
 	int rollno;
 	float percentage;
-	//recover_record(&head);
+	load_record(&head);
 	while(1){
-		printf("\n\n\n************************** STUDENT RECORD MENU *************************\n\n");
+		printf("\n\n************************** STUDENT RECORD MENU *************************\n\n");
 		printf("a/A : Add new record\n");
 		printf("d/D : Delete a record\n");
 		printf("v/V : Show the list\n");
@@ -41,6 +41,7 @@ int main(){
 				}
 				break;
 			case 'v': show_all_records(head); break;
+/*
 			case 'm': 
 				printf("r/R : Search record to modify using roll number\n");
 				printf("n/N : Search record to modify using name\n");
@@ -56,21 +57,22 @@ int main(){
 						break;	
 					case 'n':
 						printf("Enter name: ");
-						scanf("%49s",name);
+						scanf(" %49[^\n]",name);
 						edit_record_name(head, name);
 						break;
 					case 'p': 
 						printf("Enter percentage: ");
-						scanf("%f",percentage);
+						scanf("%f", percentage);
 						edit_record_percentage(head, percentage);
 						break;
 
 					default: printf("Invalid input\n");
 				}
 				break;
-			case 's': save_record(head); break;
-			case 't': sort_record(&head); break;
-			case 'r': reverse_record(&head); break;
+*/
+			case 's': save_record(head); break;			
+		//	case 't': sort_record(&head); break;
+		//	case 'r': reverse_record(&head); break;
 			case 'l': delete_all(&head); break;
 			case 'e': 
 				printf("s/S : Save and exit\n");

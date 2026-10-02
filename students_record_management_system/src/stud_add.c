@@ -5,7 +5,7 @@ void add_new(student **head){
 	student *node  = *head;
 	student *new = calloc(1, sizeof(student));
 	if(!new){
-		printf("Calloc failed\n");
+		printf("\033[31mCalloc failed\033[0m\n");
 		return;
 	}
 	char op;
@@ -24,7 +24,7 @@ void add_new(student **head){
 				printf("Student name: "	);
 				scanf("%49[^\n]", new->name); 
 				break;
-			default:printf("\nInvalid input\n");
+			default:printf("\033[31mInvalid input\033[0m\n");
 		}
 	}
 	printf("Student percentage: ");
@@ -42,7 +42,7 @@ void add_new(student **head){
 				printf("Student percentage: ");
 				scanf("%f", &new->percentage);
 				 break;
-			default:printf("\nInvalid input\n");
+			default:printf("\033[31mInvalid input\033[0m\n");
 		}
 	}
 	new->rollno = get_rollno(*head);
@@ -58,7 +58,7 @@ void add_new(student **head){
 int is_name_valid(char *name){
 	char ch = name[0] | 32;
 	if(ch < 'a'|| ch > 'z'){
-		printf("\nInvalid name!!\n");
+		printf("\033[31mInvalid name\033[0m\n");
 		return 0;
 	}
 	return 1;
@@ -67,7 +67,7 @@ int is_name_valid(char *name){
 int is_percentage_valid(float percentage){
 	if(percentage >= 0 && percentage <= 100)
 		return 1;
-	printf("\nInvalid mark percentage!!\n");
+	printf("\033[31mInvalid mark percentage!!\n\033[0m");
 	return 0;
 }
 

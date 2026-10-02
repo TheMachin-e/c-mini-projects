@@ -24,7 +24,7 @@ void edit_record_percentage(student *, float);
 void edit_record_name(student *, char *);
 
 void save_record(student *);
-void recover_record(student **);
+void load_record(student **);
 
 void sort_record(student **);
 void reverse_record(student **);
