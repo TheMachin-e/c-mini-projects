@@ -1,4 +1,4 @@
-OBJ = src/stud_main.o src/stud_add.o src/stud_show.o src/stud_del.o src/stud_save.o
+OBJ = src/stud_main.o src/stud_add.o src/stud_show.o src/stud_del.o src/stud_save.o src/stud_mod.o
 student: $(OBJ)
 	cc $^ -o $@
 %.o: %.c src/student.h

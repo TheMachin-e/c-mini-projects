@@ -37,11 +37,10 @@ int main(){
 						scanf(" %[^\n]49",name);
 						delete_record_name(&head, name);
 						break;
-					default: printf("Invalid input\n");
+					default: printf("\033[31mInvalid input\033[0m\n");
 				}
 				break;
 			case 'v': show_all_records(head); break;
-/*
 			case 'm': 
 				printf("r/R : Search record to modify using roll number\n");
 				printf("n/N : Search record to modify using name\n");
@@ -52,24 +51,23 @@ int main(){
 				switch(sub_op){
 					case 'r':
 						printf("Enter roll number: ");
-						scanf("%d",&rollno);
+						scanf("%d", &rollno);
 						edit_record_rollno(head, rollno);
 						break;	
 					case 'n':
 						printf("Enter name: ");
-						scanf(" %49[^\n]",name);
+						scanf(" %49[^\n]", name);
 						edit_record_name(head, name);
 						break;
 					case 'p': 
 						printf("Enter percentage: ");
-						scanf("%f", percentage);
+						scanf("%f", &percentage);
 						edit_record_percentage(head, percentage);
 						break;
+					default: printf("\033[031Inalid input\033[0m\n");
 
-					default: printf("Invalid input\n");
 				}
 				break;
-*/
 			case 's': save_record(head); break;			
 		//	case 't': sort_record(&head); break;
 		//	case 'r': reverse_record(&head); break;
@@ -86,9 +84,9 @@ int main(){
 				else if(sub_op == 'e')
 					return 0;
 				else
-					printf("Invalid input\n");
+					printf("\033[31mInvalid input\033[0m\n");
 				break;
-			default: printf("Inalid input\n");
+			default: printf("\033[031Inalid input\033[0m\n");
 				 
 		}
 	}

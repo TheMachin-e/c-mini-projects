@@ -46,5 +46,5 @@ void load_record(student **head){
 		node = new;
 	}
 	fclose(fp);
-	printf("Data loaded successfully\n");
+	printf("Data loaded successfully");
 }
