@@ -64,13 +64,25 @@ int main(){
 						scanf("%f", &percentage);
 						edit_record_percentage(head, percentage);
 						break;
-					default: printf("\033[031Inalid input\033[0m\n");
+					default: printf("\033[31mInvalid input\033[0m\n");
 
 				}
 				break;
 			case 's': save_record(head); break;			
-		//	case 't': sort_record(&head); break;
-		//	case 'r': reverse_record(&head); break;
+			case 't':
+				printf("r/R : Sort with rollno\n");
+				printf("n/N : Sort with name\n");
+				printf("p/P : Sort with percentage\n");
+				scanf(" %c", &sub_op);
+				sub_op |= 32;
+				switch(sub_op){
+					case 'r': sort_record_rollno(&head); break;
+					case 'n': sort_record_name(&head); break;
+					case 'p': sort_record_percentage(&head); break;
+					default: printf("\033[31mInvalid input\033[0m\n");
+				}
+				break;
+			case 'r': reverse_record(&head); break;
 			case 'l': delete_all(&head); break;
 			case 'e': 
 				printf("s/S : Save and exit\n");
@@ -86,7 +98,7 @@ int main(){
 				else
 					printf("\033[31mInvalid input\033[0m\n");
 				break;
-			default: printf("\033[031Inalid input\033[0m\n");
+			default: printf("\033[31mInvalid input\033[0m\n");
 				 
 		}
 	}

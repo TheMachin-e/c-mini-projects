@@ -195,3 +195,84 @@ void edit_record_percentage(student *head, float percentage){
 	else
 		printf("\033[31mNo records with matching percentage\033[0m\n");
 }
+
+void sort_record_name(student **head){
+	if(!*head){
+		printf("\033[31mRecord is empty\n");
+		return;
+	}
+	student *node1 = *head, *node2, *tmp, dummy = {-1, "\0", -1.00, NULL};
+	while(node1){
+		tmp = node1->next;
+		node2 = &dummy;
+		while(node2->next && strcmp(node1->name, node2->next->name) > 0){
+			node2 = node2->next;
+		}
+		
+		node1->next = node2->next;
+		node2->next = node1;
+		node1 = tmp;
+	}
+	*head = dummy.next;
+	printf("Record sorted successfully\n");
+	show_all_records(*head);
+}
+
+void sort_record_percentage(student **head){
+	if(!*head){
+		printf("\033[31mRecord is empty\033[0m\n");
+		return;
+	}
+	student *node1 = *head, *node2, *tmp;
+	student dummy = {-1, "", -1.00, NULL};
+	while(node1){
+		tmp = node1->next;
+		node2 = &dummy;
+		while(node2->next && node1->percentage < node2->next->percentage)
+			node2  = node2->next;
+		node1->next = node2->next;
+		node2->next = node1;
+		node1 = tmp;
+	}
+	*head = dummy.next;
+	printf("Record sorted successfully\n");
+	show_all_records(*head);
+}
+
+void sort_record_rollno(student **head){
+	if(!*head){
+		printf("\033[31mRecord is empty\n");
+		return;
+	}
+	student *node1 = *head, *node2, *tmp;
+	student dummy ={-1, "", -1.0,  NULL };
+	while(node1){
+		tmp =  node1->next;
+		node2 = &dummy;
+		while(node2->next && node1->rollno > node2->next->rollno)
+			node2 = node2->next;
+		node1->next = node2->next;
+		node2->next = node1;
+		node1 = tmp;
+	}
+	*head = dummy.next;
+	printf("Record sorted sucessfully\n");
+	show_all_records(*head);
+}
+
+void reverse_record(student **head){
+	if(!*head){
+		printf("\033[31mRecord is empty\033[0m\n");
+		return;
+	}
+	student *node = *head, *prev = NULL, *tmp;
+	while(node){
+		tmp = node->next;
+		node->next = prev;
+		prev = node;
+		node = tmp;
+	}
+	*head = prev; 		
+	printf("Record successfully reversed\n");
+	show_all_records(*head);
+}

@@ -26,7 +26,9 @@ void edit_record_name(student *, char *);
 void save_record(student *);
 void load_record(student **);
 
-void sort_record(student **);
+void sort_record_rollno(student **);
+void sort_record_name(student **);
+void sort_record_percentage(student **);
 void reverse_record(student **);
 
 
