@@ -33,7 +33,7 @@ students_record_management_system/
     ├── stud_del.c
     ├── stud_file.c
     └── student.h
-
+```
 ## Concepts Practiced
 
 1. **Structures and `typedef`**
